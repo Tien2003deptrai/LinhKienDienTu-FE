@@ -2,10 +2,13 @@
   {
     "_id": "mb001",
     "category": "Mainboard",
-    "imgLink": "https://images.unsplash.com/photo-1591797508693-750403906973?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://anphat.com.vn/media/product/33570_mainboard_asus_prime_b550m__4_.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1591797508693-750403906973?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop"
+      "https://anphat.com.vn/media/product/33570_mainboard_asus_prime_b550m__4_.jpg",
+      "https://anphat.com.vn/media/product/33570_mainboard_asus_prime_b550m__3_.jpg",
+      "https://anphat.com.vn/media/product/33570_mainboard_asus_prime_b550m__2_.jpg",
+      "https://anphat.com.vn/media/product/33570_mainboard_asus_prime_b550m_a__3_.jpg"
+
     ],
     "name": "ASUS Prime B550M-A",
     "price": 3290000,
@@ -22,10 +25,11 @@
   {
     "_id": "mb002",
     "category": "Mainboard",
-    "imgLink": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://nguyencongpc.vn/media/product/250-25555-sp001417sp001417sp001417.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=1200&auto=format&fit=crop"
+      "https://nguyencongpc.vn/media/product/250-25555-sp001417sp001417sp001417.jpg",
+      "https://nguyencongpc.vn/media/product/250-25555-49678_mainboard_msi_b450m_pro_vd.jpg",
+      "https://nguyencongpc.vn/media/product/250-25555-49678_mainboard_msi_b450m_pro_vd--2-.jpg"
     ],
     "name": "MSI B450M PRO-VDH MAX",
     "price": 2290000,
@@ -41,10 +45,10 @@
   {
     "_id": "mb003",
     "category": "Mainboard",
-    "imgLink": "https://images.unsplash.com/photo-1591797508693-750403906973?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://product.hstatic.net/200000722513/product/roducts-gigabyte-b550m-ds3h-rev-1-0-1_94e786a6d40646158a63f46769136219_2d1b2d74388141adb800b515ebbef7bc_master.png",
     "images": [
-      "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1587202372775-98927b76f60c?q=80&w=1200&auto=format&fit=crop"
+      "https://product.hstatic.net/200000722513/product/roducts-gigabyte-b550m-ds3h-rev-1-0-1_94e786a6d40646158a63f46769136219_2d1b2d74388141adb800b515ebbef7bc_master.png",
+      "https://product.hstatic.net/200000722513/product/roducts-gigabyte-b550m-ds3h-rev-1-0-2_7acaebdfed9f48229f5d8b651befd7fb_09215cbb7e654acf99a0403992b87e22_master.png"
     ],
     "name": "Gigabyte B550M DS3H",
     "price": 2590000,
@@ -60,10 +64,11 @@
   {
     "_id": "mb004",
     "category": "Mainboard",
-    "imgLink": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://nguyencongpc.vn/media/product/250-21518-b660.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1555617981-e517c6a02862?q=80&w=1200&auto=format&fit=crop"
+      "https://nguyencongpc.vn/media/product/250-21518-b660.jpg",
+      "https://nguyencongpc.vn/media/product/250-21518-main-4.jpg",
+      "https://nguyencongpc.vn/media/product/250-21518-63407_mainboard_asus_tuf_gaming_b660m_plus_d4_5.jpg"
     ],
     "name": "ASUS TUF Gaming B660M-PLUS",
     "price": 4290000,
@@ -79,10 +84,11 @@
   {
     "_id": "mb005",
     "category": "Mainboard",
-    "imgLink": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://product.hstatic.net/200000320233/product/b760m_pro_rs_m1__83d854bf767c4ed1a183d2298af2b1fe_1024x1024.png",
     "images": [
-      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop"
+      "https://product.hstatic.net/200000320233/product/b760m_pro_rs_m1__83d854bf767c4ed1a183d2298af2b1fe_1024x1024.png",
+      "https://product.hstatic.net/200000320233/product/b760m_pro_rs_m2__ea91b31d0e304e5cbd826cedfef2a541_1024x1024.png",
+      "https://product.hstatic.net/200000320233/product/b760m_pro_rs_m4__6fc7857e1cd44b2a8c08f9db74868f21_1024x1024.png"
     ],
     "name": "ASRock B760M Pro RS",
     "price": 3690000,
@@ -96,9 +102,11 @@
   {
     "_id": "mb006",
     "category": "Mainboard",
-    "imgLink": "https://images.unsplash.com/photo-1587202372775-98927b76f60c?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://nguyencongpc.vn/media/product/250-23901-main.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1587202372775-98927b76f60c?q=80&w=1200&auto=format&fit=crop"
+      "https://nguyencongpc.vn/media/product/250-23901-main.jpg",
+      "https://nguyencongpc.vn/media/product/250-23901-1024--3-.png",
+      "https://nguyencongpc.vn/media/product/250-23901-1024--2-.png"
     ],
     "name": "MSI PRO B650M-A",
     "price": 4790000,
@@ -114,10 +122,11 @@
   {
     "_id": "mb007",
     "category": "Mainboard",
-    "imgLink": "https://images.unsplash.com/photo-1555617981-e517c6a02862?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://nguyencongpc.vn/media/product/250-21219-gigabyte-z690-ud-ddr4-2021.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1555617981-e517c6a02862?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+      "https://nguyencongpc.vn/media/product/250-21219-gigabyte-z690-ud-ddr4-2021.jpg",
+      "https://nguyencongpc.vn/media/product/250-21219-gigabyte-z690-ud-ddr4-1.jpg",
+      "https://nguyencongpc.vn/media/product/250-21219-gigabyte-z690-ud-ddr4-8.jpg"
     ],
     "name": "Gigabyte Z690 UD",
     "price": 6690000,
@@ -133,9 +142,11 @@
   {
     "_id": "mb008",
     "category": "Mainboard",
-    "imgLink": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://pcmarket.vn/media/product/11540_mainboard_asus_rog_b650e_f_gaming_wifi_pcm_.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop"
+      "https://pcmarket.vn/media/product/11540_mainboard_asus_rog_b650e_f_gaming_wifi_pcm_.jpg",
+      "https://pcmarket.vn/media/product/11540_mainboard_asus_rog_b650e_f_gaming_wifi_pcm_1.jpg",
+      "https://pcmarket.vn/media/product/11540_mainboard_asus_rog_b650e_f_gaming_wifi_pcm_2.jpg"
     ],
     "name": "ASUS ROG Strix B650E-F Gaming",
     "price": 8990000,
@@ -152,10 +163,10 @@
   {
     "_id": "sc001",
     "category": "Linh kiện sạc điện thoại",
-    "imgLink": "https://images.unsplash.com/photo-1606220588911-4a0f7f4e2e3d?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://product.hstatic.net/200000890439/product/dq01_7852eec7633d46368871274b49a30e70_543b9544df9e4f14925508b7227c8d95_master.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1606220588911-4a0f7f4e2e3d?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1526178613271-1f3db1c7b4ae?q=80&w=1200&auto=format&fit=crop"
+      "https://product.hstatic.net/200000890439/product/dq02_338fee5f13694afc9690dcd55f99a281_6939bb7df2e34912bcc0c55130fe1572_master.jpg",
+      "https://product.hstatic.net/200000890439/product/0_35e901cafab84adea117ff3de218cf78_57888a5807a3482d965163ac9d83706c_master.jpg"
     ],
     "name": "Adapter Sạc Nhanh 65W",
     "price": 399000,
@@ -171,9 +182,11 @@
   {
     "_id": "sc002",
     "category": "Linh kiện sạc điện thoại",
-    "imgLink": "https://images.unsplash.com/photo-1586015555751-63bb77f4322d?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://ugreenvietnam.com.vn/images/pro/cap-sac-truyen-du-lieu-usb-type-c-male-male-dai-1-5m-chinh-hang-ugreen-50751_5017.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1586015555751-63bb77f4322d?q=80&w=1200&auto=format&fit=crop"
+      "https://ugreenvietnam.com.vn/images/pro/cap-sac-truyen-du-lieu-usb-type-c-male-male-dai-1-5m-chinh-hang-ugreen-50751_5017.jpg",
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/c/a/cap-type-c-to-type-c-anker-zolo-a8060-240w-1m_2_.png",
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/c/a/cap-type-c-to-type-c-anker-zolo-a8060-240w-1m_4_.png"
     ],
     "name": "Cáp Sạc USB-C 1.5m",
     "price": 99000,
@@ -187,10 +200,11 @@
   {
     "_id": "sc003",
     "category": "Linh kiện sạc điện thoại",
-    "imgLink": "https://images.unsplash.com/photo-1606220588911-4a0f7f4e2e3d?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_561_1__5.png",
     "images": [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=1200&auto=format&fit=crop"
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_561_1__5.png",
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_561_4__4.png",
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_561_3__4.png"
     ],
     "name": "Pin Sạc Dự Phòng 20000mAh",
     "price": 699000,
@@ -206,9 +220,11 @@
   {
     "_id": "sc004",
     "category": "Linh kiện sạc điện thoại",
-    "imgLink": "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://chiemtaimobile.vn/images/thumbnails/600/600/detailed/57/bo-sac-nhanh-type-c-33w-zmi-ha715-gan-nnn.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1200&auto=format&fit=crop"
+      "https://chiemtaimobile.vn/images/thumbnails/600/600/detailed/57/bo-sac-nhanh-type-c-33w-zmi-ha715-gan-nnn.jpg",
+      "https://chiemtaimobile.vn/images/thumbnails/600/600/detailed/32/bo-sac-nhanh-type-c-33w-zmi-ha715-gan-3.jpg",
+      "https://chiemtaimobile.vn/images/thumbnails/600/600/detailed/32/bo-sac-nhanh-type-c-33w-zmi-ha715-gan-10.jpg"
     ],
     "name": "Cốc Sạc GaN 33W",
     "price": 249000,
@@ -222,10 +238,11 @@
   {
     "_id": "sc005",
     "category": "Linh kiện sạc điện thoại",
-    "imgLink": "https://images.unsplash.com/photo-1510554310709-fea2534f068a?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/e/de-sac-khong-day-aukey-magfusion-qi2-2-lc-mc111-1x-25w_4_.png",
     "images": [
-      "https://images.unsplash.com/photo-1510554310709-fea2534f068a?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop"
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/e/de-sac-khong-day-aukey-magfusion-qi2-2-lc-mc111-1x-25w_5_.png",
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/e/de-sac-khong-day-aukey-magfusion-qi2-2-lc-mc111-1x-25w_3_.png",
+      "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/e/de-sac-khong-day-aukey-magfusion-qi2-2-lc-mc111-1x-25w_8_.png"
     ],
     "name": "Đế Sạc Không Dây 15W",
     "price": 359000,
@@ -239,11 +256,13 @@
   {
     "_id": "sc006",
     "category": "Linh kiện sạc điện thoại",
-    "imgLink": "https://images.unsplash.com/photo-1526178613271-1f3db1c7b4ae?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://hoco.vn/data/Product/bo-sac-xe-hoi-z58a-rank-48w-cong-kep-pd30wqc3-0-c-den-ip-XjPBhS2O9q5n0i8uRwUb.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1526178613271-1f3db1c7b4ae?q=80&w=1200&auto=format&fit=crop"
+      "https://hoco.vn/data/Product/bo-sac-xe-hoi-z58a-rank-48w-cong-kep-pd30wqc3-0-c-den-ip-XjPBhS2O9q5n0i8uRwUb.jpg",
+      "https://hoco.vn/data/Product/bo-sac-xe-hoi-z58a-rank-48w-cong-kep-pd30wqc3-0-c-den-ip-DIjzD5G3q6cBf4QwnBDF.jpg",
+      "https://hoco.vn/data/Product/bo-sac-xe-hoi-z58a-rank-48w-cong-kep-pd30wqc3-0-c-den-ip-fqG703ZnAMgmQz8snAIi.jpg"
     ],
-    "name": "Bộ Sạc Xe Hơi 48W",
+    "name": "Bộ Sạc Điện Thoại 48W",
     "price": 299000,
     "seller": "Baseus Việt Nam",
     "desc": "Car charger 48W, 2 cổng USB-A + 1 USB-C, hợp kim nhôm.",
@@ -256,10 +275,11 @@
   {
     "_id": "hb001",
     "category": "Hub chuyển đổi",
-    "imgLink": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://hangdang.vn/wp-content/uploads/2022/10/z3770090867705_902f1ace1f36ef0a68ca259b3849a97a-600x600.jpg.webp",
     "images": [
-      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=1200&auto=format&fit=crop"
+      "https://hangdang.vn/wp-content/uploads/2022/10/z3770090841570_fa998bb37f6e2e4f6f8fb30067c58837-600x600.jpg.webp",
+      "https://hangdang.vn/wp-content/uploads/2022/10/z3770090867705_902f1ace1f36ef0a68ca259b3849a97a-600x600.jpg.webp",
+      "https://hangdang.vn/wp-content/uploads/2022/10/z3770090847587_9475acd57afaa4f9d614177b069518e9-600x600.jpg.webp"
     ],
     "name": "Hub USB-C 7-in-1",
     "price": 899000,
@@ -275,9 +295,11 @@
   {
     "_id": "hb002",
     "category": "Hub chuyển đổi",
-    "imgLink": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://product.hstatic.net/200000659729/product/upload_5edfa5a4c71445b79a5594dd9ef28313_master.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1200&auto=format&fit=crop"
+      "https://product.hstatic.net/200000659729/product/upload_9f8580d8c2c84a3c82425e8f7427ac5c_master.jpg",
+      "https://product.hstatic.net/200000659729/product/upload_507c127dd30140a3bc01754d5337cdfa_master.jpg",
+      "https://product.hstatic.net/200000659729/product/upload_6d8eb0f317c446b7ba83b33676b475a2_master.jpg"
     ],
     "name": "Adapter HDMI to VGA",
     "price": 179000,
@@ -291,10 +313,11 @@
   {
     "_id": "hb003",
     "category": "Hub chuyển đổi",
-    "imgLink": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://ugreen.vn/wp-content/uploads/2022/10/hub-usb-30-ugreen-4-cong-ugreen-cr113-1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581089781785-603411fa81e5?q=80&w=1200&auto=format&fit=crop"
+      "https://ugreen.vn/wp-content/uploads/2022/10/hub-usb-30-ugreen-4-cong-ugreen-cr113-1.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAhcKF9c8_pi6Yt1kOiFWVv68pZQvSsso7OCC1CRI0umZnF0L6ezdCD4t9HN8T2wXIO4&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-OPp9SWh5svgsuL76z8P5i6Co1kh1og28gYqZGxPgEKFjOt1K2IOF40e8aLPrlqAoygs&usqp=CAU"
     ],
     "name": "Hub USB 3.0 4 Ports",
     "price": 259000,
@@ -308,9 +331,10 @@
   {
     "_id": "hb004",
     "category": "Hub chuyển đổi",
-    "imgLink": "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://product.hstatic.net/200000637319/product/ix-images-container_h4f_h5e_9718775513118_usb-c-dock-black-500x500__1__d5d355071f924346ad56bef30e3349ce_master.png",
     "images": [
-      "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=1200&auto=format&fit=crop"
+      "https://product.hstatic.net/200000637319/product/image_-_2024-12-04t105814.412_da1c9855c22f48a5b1f9d1418d38ca63_master.png",
+      "https://product.hstatic.net/200000637319/product/image_-_2024-12-04t105816.027_558d387d5a7e4523bd7ae891c06c0cf1_master.png"
     ],
     "name": "Dock USB-C 11-in-1",
     "price": 1699000,
@@ -326,10 +350,11 @@
   {
     "_id": "hb005",
     "category": "Hub chuyển đổi",
-    "imgLink": "https://images.unsplash.com/photo-1581089781785-603411fa81e5?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://phanphoiugreen.vn/uploadwb/hinhsp/Hub_Type_C_Sang_2_Cong_HDMI_8K@30Hz_USB_3.0USB_C_Sac_PD100W_Ugreen_15852_CM948_1_22482202472115_b_.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1581089781785-603411fa81e5?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop"
+      "https://phanphoiugreen.vn/uploadwb/hinhsp/Hub_Type_C_Sang_2_Cong_HDMI_8K@30Hz_USB_3.0USB_C_Sac_PD100W_Ugreen_15852_CM948_1_22482202472115_b_.jpg",
+      "https://phanphoiugreen.vn/uploadwb/hinhsp/2024722152212235_Hub-Type-C-Sang-2-Cong-HDMI-8K@30Hz-USB-3.0USB-C-Sac-PD100W-Ugreen-15852-CM948-2.jpg",
+      "https://phanphoiugreen.vn/uploadwb/hinhsp/2024722152212250_Hub-Type-C-Sang-2-Cong-HDMI-8K@30Hz-USB-3.0USB-C-Sac-PD100W-Ugreen-15852-CM948-4.jpg"
     ],
     "name": "Splitter USB-C ra 2 USB-A",
     "price": 149000,
@@ -343,9 +368,11 @@
   {
     "_id": "hb006",
     "category": "Hub chuyển đổi",
-    "imgLink": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop",
+    "imgLink": "https://static.tp-link.com/upload/image-line/05_normal_20241030065236d.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop"
+      "https://static.tp-link.com/upload/image-line/05_normal_20241030065236d.jpg",
+      "https://static.tp-link.com/upload/image-line/05_normal_20241030065236d.jpg",
+      "https://static.tp-link.com/upload/image-line/04_normal_20241030065218z.jpg"
     ],
     "name": "USB-C to Ethernet 2.5GbE",
     "price": 599000,
@@ -354,6 +381,24 @@
     "inStock": 18,
     "specs": { "Mạng": "2.5GbE", "Giao tiếp": "USB-C", "Chuẩn": "IEEE 802.3bz" },
     "avgRating": 4.3,
+    "reviews": []
+  },
+  {
+    "_id": "hb007",
+    "category": "Hub chuyển đổi",
+    "imgLink": "https://hienlaptop.com/wp-content/uploads/2024/09/Hub-Chia-Usb-c-Ra-Usb-Glowy-H6cb-4-Ports.jpg",
+    "images": [
+      "https://hienlaptop.com/wp-content/uploads/2024/09/Hub-Chia-Usb-c-Ra-Usb-Glowy-H6cb-4-Ports.jpg",
+      "https://down-vn.img.susercontent.com/file/d2b851081031d61cab53121175dbdf02",
+      "https://www.unitek-products.com/cdn/shop/products/USB3.0_4-Port_Hub_2.jpg?v=1599118958&width=1200"
+    ],
+    "name": "Hub USB-C 4 Port",
+    "price": 199000,
+    "seller": "TP-Link Việt Nam",
+    "desc": "4 cổng USB-C, hỗ trợ sạc PD 60W, nhanh chóng, tiện lợi.",
+    "inStock": 22,
+    "specs": { "USB": "4 x USB-C", "Tốc độ": "5Gbps", "Sạc": "PD 60W" },
+    "avgRating": 4.2,
     "reviews": []
   }
 ]
