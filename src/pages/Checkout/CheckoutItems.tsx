@@ -1,50 +1,90 @@
 import React from "react";
-import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import ItemCheckoutVar from "../../components/ShopItems/ItemCheckoutVar";
-import electronicsData from "../../data/electronicsData.json";
 
-type Props = {};
+// Cart item type
+interface CartItem {
+  product: any;
+  quantity: number;
+}
 
-const CheckoutItems = (props: Props) => {
+type Props = {
+  cartItems: CartItem[];
+};
+
+const CheckoutItems = ({ cartItems }: Props) => {
   const navigate = useNavigate();
 
-  // For frontend demo, we'll just use the first few products
-  const items = electronicsData.slice(0, 3);
-  const subtotal = items.reduce((sum, item) => sum + item.price, 0);
-  const shippingCost = 5.99;
-  const tax = subtotal * 0.1;
+  // Calculate totals based on cart items
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + (item.product.price * item.quantity),
+    0
+  );
+
+  const shippingCost = subtotal > 1000000 ? 0 : 30000; // Free shipping over 1M VND
+  const tax = subtotal * 0.1; // 10% tax
   const total = subtotal + shippingCost + tax;
 
   return (
-    <div className="max-w-4xl p-5">
+    <div className="space-y-4">
       {/* Cart Items Here */}
-      {items.map((product) => (
-        <ItemCheckoutVar key={product._id} product={product} />
-      ))}
-      <div className="mt-6 flex items-center justify-between border-t pt-6">
-        <div
-          className="group flex cursor-pointer items-center duration-200 hover:scale-110"
-          onClick={() => navigate("/")}
-        >
-          <FaArrowLeft className="mr-2 text-blue-700 group-hover:text-blue-900" />
-          <span className="text-md font-bold text-blue-500">
-            Continue Shopping
-          </span>
-        </div>
-        <div className="flex items-end justify-center">
-          <span className="mr-1 text-lg font-thin text-gray-500">
-            Subtotal:
-          </span>
-          <span className="px-1 text-lg font-bold text-gray-800">
-            ${subtotal.toFixed(2)}
-          </span>
+      <div className="space-y-4">
+        {cartItems.map(({ product, quantity }) => (
+          <ItemCheckoutVar
+            key={product._id}
+            product={product}
+            quantity={quantity}
+          />
+        ))}
+      </div>
+
+      {/* Order Summary */}
+      <div className="border-t border-gray-200 pt-4 mt-6">
+        <div className="space-y-3">
+          <div className="flex justify-between text-sm">
+            <span className="text-gray-600">Tạm tính</span>
+            <span className="font-medium text-gray-900">
+              {new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(subtotal)}
+            </span>
+          </div>
+
+          <div className="flex justify-between text-sm">
+            <span className="text-gray-600">Phí vận chuyển</span>
+            <span className="font-medium text-gray-900">
+              {shippingCost > 0
+                ? new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(shippingCost)
+                : "Miễn phí"}
+            </span>
+          </div>
+
+          <div className="flex justify-between text-sm">
+            <span className="text-gray-600">Thuế (10%)</span>
+            <span className="font-medium text-gray-900">
+              {new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(tax)}
+            </span>
+          </div>
+
+          <div className="flex justify-between text-base font-semibold pt-3 border-t border-gray-200">
+            <span className="text-gray-900">Tổng cộng</span>
+            <span className="text-indigo-600">
+              {new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(total)}
+            </span>
+          </div>
         </div>
       </div>
-      <small className="float-right text-red-900 opacity-80">
-        + ${(tax + shippingCost).toFixed(2)} charges.
-      </small>
+
+      <div className="pt-6 flex items-center justify-between">
+        <button
+          onClick={() => navigate("/cart")}
+          className="flex items-center text-indigo-600 hover:text-indigo-800 font-medium"
+        >
+          <svg className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Quay lại giỏ hàng
+        </button>
+      </div>
     </div>
   );
 };

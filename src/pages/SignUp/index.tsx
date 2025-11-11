@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 
 import signup from "../../assets/signup.svg";
@@ -19,125 +19,154 @@ const SignUp = (props: Props) => {
 
   const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Validation
+    if (!name || !email || !password) {
+      setIsErrorOpen(true);
+      return;
+    }
+
     // If password is less than 6 characters,
     // show error modal
     if (password.length < 6) {
       setIsPasswordShortOpen(true);
       return;
     }
-    // For frontend demo, we'll just show a success message
+
+    // Simulate registration - in a real app, this would be an API call
+    // For frontend demo, we'll simulate a successful registration and login
+    const userData = {
+      name: name,
+      email: email
+    };
+
+    // Store login state in localStorage
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("user", JSON.stringify(userData));
+
     setIsSuccessOpen(true);
     setTimeout(() => {
-      navigator("/"); // navigate to home page
+      navigator("/profile"); // navigate to profile page after registration
     }, 2000);
   };
 
   return (
-    <section className="h-screen">
+    <section className="min-h-screen bg-gray-50 flex items-center py-12">
       <ErrorModal
         isOpen={isErrorOpen}
-        text="Something went wrong. Please try again."
+        text="Vui lòng điền đầy đủ thông tin đăng ký"
         onClose={() => setIsErrorOpen(false)}
       />
       <SuccessModal
         isOpen={isSuccessOpen}
-        text="Registration successful! Redirecting to home page..."
+        text="Đăng ký thành công! Đang chuyển hướng đến trang hồ sơ..."
         onClose={() => setIsSuccessOpen(false)}
       />
       <ErrorModal
         isOpen={isPasswordShortOpen}
-        text="Password should be at least 6 characters long"
+        text="Mật khẩu phải có ít nhất 6 ký tự"
         onClose={() => setIsPasswordShortOpen(false)}
       />
-      <div className="container mx-auto h-full px-6 py-12">
-        <div className="g-6 flex h-full flex-wrap items-center justify-center text-gray-800">
-          <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-5/12">
-            <img src={signup} className="w-full" alt="Sample image" />
+
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+          <div className="hidden lg:block lg:w-1/2">
+            <img src={signup} className="rounded-2xl shadow-lg" alt="Sample image" />
           </div>
 
-          <div className="mb-12 md:mb-0 md:w-7/12 lg:w-6/12 xl:w-5/12">
-            <form onSubmit={submitHandler}>
-              <div className="mb-6 flex flex-row items-center justify-center lg:justify-start">
-                <p className="mb-0 mr-4 text-2xl font-bold">Sign up with</p>
-                <button
-                  type="button"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                  className="mx-1 inline-block rounded-full bg-blue-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
-                >
-                  <FaFacebookF className="h-4 w-4" />
-                </button>
+          <div className="w-full lg:w-1/2">
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Đăng ký</h2>
 
-                <button
-                  type="button"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                  className="mx-1 inline-block rounded-full bg-blue-400 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg"
-                >
-                  <FaTwitter className="h-4 w-4" />
-                </button>
-              </div>
+              <form onSubmit={submitHandler}>
+                <div className="mb-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <p className="text-lg font-semibold">Đăng ký với</p>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      className="inline-flex items-center justify-center rounded-full bg-blue-600 p-3 text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700"
+                    >
+                      <FaFacebookF className="h-4 w-4" />
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex items-center justify-center rounded-full bg-blue-400 p-3 text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-500"
+                    >
+                      <FaTwitter className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
 
-              <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300">
-                <p className="mx-4 mb-0 text-center font-semibold">Or</p>
-              </div>
+                <div className="my-6 flex items-center">
+                  <div className="flex-grow border-t border-gray-300"></div>
+                  <span className="mx-4 text-gray-500">hoặc</span>
+                  <div className="flex-grow border-t border-gray-300"></div>
+                </div>
 
-              <div className="mb-6">
-                <input
-                  type="text"
-                  className="peer block w-full rounded border border-gray-300 bg-transparent py-4 px-3 text-gray-700 placeholder-black placeholder-opacity-40 focus:border-blue-600 focus:outline-none"
-                  id="exampleName"
-                  placeholder="Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
+                <div className="mb-6">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Họ và tên
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="Nhập họ và tên"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
 
-              <div className="mb-6">
-                <input
-                  type="text"
-                  className="peer block w-full rounded border border-gray-300 bg-transparent py-4 px-3 text-gray-700 placeholder-black placeholder-opacity-40 focus:border-blue-600 focus:outline-none"
-                  id="exampleEmail01"
-                  placeholder="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
+                <div className="mb-6">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="Nhập địa chỉ email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
 
-              <div className="mb-6">
-                <input
-                  type="password"
-                  className="peer block w-full rounded border border-gray-300 bg-transparent py-4 px-3 text-gray-700 placeholder-black placeholder-opacity-40 focus:border-blue-600 focus:outline-none"
-                  id="examplePassword01"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
+                <div className="mb-6">
+                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+                    Mật khẩu
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="Nhập mật khẩu"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
 
-              <div className="mb-6 text-center">
-                <button
-                  type="submit"
-                  className="focus:shadow-outline mr-3 inline-block rounded bg-blue-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none active:bg-blue-800 active:shadow-lg"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                >
-                  Sign up
-                </button>
-              </div>
-
-              <div className="mt-2 mb-0 pt-1 text-center">
-                <p className="mb-0 text-sm font-semibold">
-                  Have an account?
-                  <a
-                    href="/signin"
-                    className="ml-2 text-red-600 transition duration-200 ease-in-out hover:text-red-700 focus:text-red-700"
+                <div className="mb-6">
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg bg-indigo-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   >
-                    Login
-                  </a>
-                </p>
-              </div>
-            </form>
+                    Đăng ký
+                  </button>
+                </div>
+
+                <div className="text-center">
+                  <p className="text-sm text-gray-600">
+                    Đã có tài khoản?{" "}
+                    <Link
+                      to="/signin"
+                      className="font-medium text-indigo-600 hover:text-indigo-700"
+                    >
+                      Đăng nhập ngay
+                    </Link>
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

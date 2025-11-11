@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocation } from "react-router-dom";
@@ -13,16 +13,56 @@ const Navbar = (props: Props) => {
   const navigator = useNavigate();
   const [isOpen, setOpen] = useState(false);
   const [isTransparent, setTransparency] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Check login status on component mount
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const userData = localStorage.getItem("user");
+
+    if (loggedIn && userData) {
+      setIsLoggedIn(true);
+      setUser(JSON.parse(userData));
+    }
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // https://stackoverflow.com/questions/55360736/how-do-i-window-removeeventlistener-using-react-useeffect
   const onScroll = useCallback(() => {
     setTransparency(pathname === "/" && window.scrollY === 0);
+    // Close dropdown on scroll
+    setIsDropdownOpen(false);
   }, [pathname, setTransparency]);
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [pathname, setTransparency, isTransparent, onScroll]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    setUser(null);
+    setIsDropdownOpen(false);
+    navigator("/");
+  };
 
   return (
     <nav
@@ -81,18 +121,52 @@ const Navbar = (props: Props) => {
           >
             Giỏ hàng
           </Link>
-          <Link
-            to="/signin"
-            className="text-white opacity-60 hover:opacity-100 focus:opacity-100 transition-opacity"
-          >
-            Đăng nhập
-          </Link>
-          <Link
-            to="/signup"
-            className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
-          >
-            Đăng ký
-          </Link>
+
+          {isLoggedIn && user ? (
+            <div className="relative" ref={dropdownRef}>
+              <button
+                className="flex items-center text-white opacity-60 hover:opacity-100 focus:opacity-100 transition-opacity"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                <span className="mr-1">{user.name}</span>
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+              {isDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 rounded-md bg-white shadow-lg py-1 z-50">
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Hồ sơ
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Đăng xuất
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              <Link
+                to="/signin"
+                className="text-white opacity-60 hover:opacity-100 focus:opacity-100 transition-opacity"
+              >
+                Đăng nhập
+              </Link>
+              <Link
+                to="/signup"
+                className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
+              >
+                Đăng ký
+              </Link>
+            </>
+          )}
         </div>
         {/* Right elements */}
       </div>

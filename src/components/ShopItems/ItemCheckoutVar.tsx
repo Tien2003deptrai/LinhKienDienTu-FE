@@ -2,34 +2,39 @@ import React from "react";
 
 type Props = {
   product: any;
+  quantity?: number;
 };
 
-const ItemCheckoutVar = ({ product }: Props) => {
+const ItemCheckoutVar = ({ product, quantity = 1 }: Props) => {
   return (
-    <div className="mt-6 flex items-center justify-between border-t pt-6">
+    <div className="flex items-center justify-between border-b border-gray-100 pb-4 last:border-0 last:pb-0">
       <div className="flex items-center">
-        <img src={product.imgLink} width={60} className="rounded-full" />
-        <div className="ml-3 flex flex-col">
-          <span className="text-md w-auto font-medium">{product.name}</span>
-          <span className="text-xs font-light text-gray-400">
-            #{product._id.slice(-5)}
-          </span>
+        <img
+          src={product.imgLink}
+          alt={product.name}
+          className="h-16 w-16 rounded-lg object-cover"
+        />
+        <div className="ml-4">
+          <h3 className="font-medium text-gray-900">{product.name}</h3>
+          <p className="text-sm text-gray-500">#{product._id.slice(-5)}</p>
         </div>
       </div>
-      <div className="flex items-center justify-center">
-        <div className="flex pr-8">
-          <input
-            type="text"
-            className="mx-2 h-6 w-8 rounded border bg-gray-100 px-2 text-sm focus:outline-none"
-            value={product.amount ?? 1}
-            disabled={true}
-          />
+
+      <div className="flex items-center gap-6">
+        <div className="flex items-center">
+          <span className="text-sm text-gray-600 mr-2">Số lượng:</span>
+          <span className="font-medium text-gray-900">{quantity}</span>
         </div>
-        <div className="pr-8">
-          <span className="text-xs font-medium">${product.price}</span>
-        </div>
-        <div>
-          <i className="fa fa-close text-xs font-medium" />
+
+        <div className="text-right">
+          <p className="text-sm font-medium text-gray-900">
+            {new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(product.price)}
+          </p>
+          {quantity > 1 && (
+            <p className="text-xs text-gray-500">
+              Tổng: {new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(product.price * quantity)}
+            </p>
+          )}
         </div>
       </div>
     </div>

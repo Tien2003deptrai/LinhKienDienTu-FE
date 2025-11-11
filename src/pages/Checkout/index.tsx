@@ -10,7 +10,15 @@ import ShippingForm from "./ShippingForm";
 import Card from "./Card";
 import { ErrorModal, SuccessModal, InfoModal } from "../../components/Modals";
 
+import electronicsData from "../../data/electronicsData.json";
+
 type Props = {};
+
+// Cart item type
+interface CartItem {
+  product: any;
+  quantity: number;
+}
 
 const Checkout = (props: Props) => {
   const navigate = useNavigate();
@@ -26,6 +34,22 @@ const Checkout = (props: Props) => {
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
+
+  const cartItems: CartItem[] = electronicsData
+    .slice(0, 3)
+    .map(product => ({
+      product,
+      quantity: Math.floor(Math.random() * 3) + 1
+    }));
+
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + (item.product.price * item.quantity),
+    0
+  );
+
+  const shippingCost = subtotal > 1000000 ? 0 : 30000;
+  const tax = subtotal * 0.1; // 10% tax
+  const total = subtotal + shippingCost + tax;
 
   const onCheckout = async () => {
     const shippingDetails = {
@@ -43,38 +67,43 @@ const Checkout = (props: Props) => {
     ) as HTMLFormElement;
     if (!formElem?.reportValidity()) return setShowInfoModal(true);
 
-    // For frontend demo, we'll just show a success message
     setShowSuccessModal(true);
   };
 
   return (
-    <div className="-mb-52 bg-gray-300">
+    <div className="min-h-screen bg-gray-50 my-20">
       <InfoModal
         isOpen={showInfoModal}
         onClose={setShowInfoModal}
-        text="Please fill all the required fields"
+        text="Vui lòng điền đầy đủ thông tin bắt buộc"
       />
       <SuccessModal
         isOpen={showSuccessModal}
         onClose={setShowSuccessModal}
-        text="Order placed successfully"
+        text="Đặt hàng thành công! Cảm ơn bạn đã mua sắm."
       />
       <ErrorModal
         isOpen={showErrorModal}
         onClose={setShowErrorModal}
-        text="Something went wrong, please try again."
+        text="Có lỗi xảy ra, vui lòng thử lại."
       />
-      <div className="sm:py-1 md:py-12">
-        <div className="container mx-auto rounded-lg bg-gray-100 shadow-lg">
-          {/* <!-- Checkout header --> */}
-          <div className="flex items-center justify-center border-b-2 border-gray-200 py-4">
-            <HiBars3BottomLeft className="mr-2 h-6 w-6" />
-            <h1 className="text-xl font-bold">Checkout</h1>
-          </div>
-          <div className="flex flex-col gap-10 p-5 md:flex-row">
-            {/* <!-- Left side --> */}
-            <div className="w-full md:w-2/3">
-              <CheckoutItems />
+
+      <div className="mx-auto max-w-8xl px-4 sm:px-6">
+        <div className="mb-6">
+          {/* <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Thanh toán</h1> */}
+          <p className="text-gray-600 mt-1">Vui lòng kiểm tra lại thông tin đơn hàng và điền thông tin giao hàng</p>
+        </div>
+
+        <div className="flex flex-col gap-8 lg:flex-row">
+          {/* Left side - Shipping and Cart Items */}
+          <div className="w-full lg:w-2/3">
+            <div className="bg-white rounded-2xl shadow-sm p-6 mb-6">
+              <div className="flex items-center mb-6">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold mr-3">
+                  1
+                </div>
+                <h2 className="text-xl font-semibold text-gray-900">Thông tin giao hàng</h2>
+              </div>
               <ShippingForm
                 setFirstName={setFirstName}
                 setLastName={setLastName}
@@ -86,9 +115,52 @@ const Checkout = (props: Props) => {
                 setPhone={setPhone}
               />
             </div>
-            {/* <!-- Right side --> */}
-            <div className="w-full md:w-1/3">
-              <Card onCheckout={onCheckout} />
+
+            <div className="bg-white rounded-2xl shadow-sm p-6">
+              <div className="flex items-center mb-6">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold mr-3">
+                  2
+                </div>
+                <h2 className="text-xl font-semibold text-gray-900">Đơn hàng của bạn</h2>
+              </div>
+              <CheckoutItems cartItems={cartItems} />
+            </div>
+          </div>
+
+          {/* Right side - Order Summary */}
+          <div className="w-full lg:w-1/3">
+            <div className="sticky top-6">
+              <Card
+                onCheckout={onCheckout}
+                subtotal={subtotal}
+                shippingCost={shippingCost}
+                tax={tax}
+                total={total}
+              />
+
+              <div className="mt-6 bg-white rounded-2xl shadow-sm p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Chính sách mua hàng</h3>
+                <ul className="space-y-3 text-sm text-gray-600">
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Hoàn tiền 100% nếu sản phẩm lỗi</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Miễn phí đổi trả trong 30 ngày</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Hỗ trợ kỹ thuật 24/7</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
